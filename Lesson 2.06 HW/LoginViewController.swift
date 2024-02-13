@@ -60,7 +60,9 @@ final class LoginViewController: UIViewController {
         
     private func showAlert(withTitle title: String, andMessage message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.passwordTF.text = ""
+        }
         alert.addAction(okAction)
         present(alert, animated: true)
     }
