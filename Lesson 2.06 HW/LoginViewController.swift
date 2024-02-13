@@ -12,8 +12,8 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
-    private let correctUser = "u"
-    private let correctPassword = "ui"
+    private let correctUser = "Elon"
+    private let correctPassword = "Musk"
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
