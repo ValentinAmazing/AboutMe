@@ -15,26 +15,26 @@ final class PersonViewController: UIViewController {
     @IBOutlet weak var departmentLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!
 
-    var userData: Account!
+    var personData: Person!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-        nameLabel.text = userData.name
-        surnameLabel.text = userData.surname
-        companyLabel.text = userData.company
-        departmentLabel.text = userData.department
-        positionLabel.text = userData.position
+        nameLabel.text = personData.name
+        surnameLabel.text = personData.surname
+        companyLabel.text = personData.company
+        departmentLabel.text = personData.department
+        positionLabel.text = personData.position
     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let bioVC = segue.destination as? BioViewController
         
         bioVC?.bio = Bio(
-            name: userData.name,
-            surname: userData.surname,
-            bio: userData.bio
+            name: personData.name,
+            surname: personData.surname,
+            bio: personData.bio
         )
     }
 }

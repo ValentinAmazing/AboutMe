@@ -20,7 +20,7 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        correctUser = userData.name
+        correctUser = userData.login
         correctPassword = userData.password
     }
     
@@ -49,12 +49,12 @@ final class LoginViewController: UIViewController {
         
         tabBarVC?.viewControllers?.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.userName = userData.name
+                welcomeVC.userName = userData.person.name
             } else if let personNavigationVC = viewController as? UINavigationController {
-                personNavigationVC.title = "\(userData.name) \(userData.surname)"
+                personNavigationVC.title = "\(userData.person.name) \(userData.person.surname)"
                 
                 let personVC = personNavigationVC.topViewController as? PersonViewController
-                personVC?.userData = userData
+                personVC?.personData = userData.person
             }
 
         }
